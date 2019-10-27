@@ -11,6 +11,8 @@ public class TreasureCollection {
     }
 
     public TreasureCollection(int capacity){
+        if(capacity < 1)
+            throw new RuntimeException("Negative capacity");
         list = new Treasure[capacity];
     }
 
