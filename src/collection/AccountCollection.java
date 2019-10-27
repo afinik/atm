@@ -63,6 +63,7 @@ public class AccountCollection {
     public void remove(int indx){
         checkIndex(indx);
         System.arraycopy(list,indx,list,indx-1,list.length-indx);
+        count--;
     }
 
 }
