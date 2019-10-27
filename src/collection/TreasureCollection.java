@@ -14,16 +14,39 @@ public class TreasureCollection {
         list = new Treasure[capacity];
     }
 
-    public void add(){}
+    public void add(Treasure treasure){
+        if(count == list.length){
+            expand();
+        }
+        list[count] = treasure;
+        count++;
+    }
 
-    public void delete(){}
+    public void remove(Treasure treasure){
+        int indx = 1;
+        if (treasure != null){
+            for (Treasure trs: list) {
+                if (treasure.equals(trs)){
+                    System.arraycopy(list,indx,list,indx-1,list.length-indx);
+                    count--;
+                }
+                indx++;
+            }
+        }
+    }
+
+    public void remove(int indx){
+        checkIndex(indx);
+        System.arraycopy(list,indx,list,indx-1,list.length-indx);
+        count--;
+    }
 
     public int size(){
         return this.count;
     }
 
     private void expand() {
-        Treasure tmp[] = new Treasure[count*2];
+        Treasure tmp[] = new Treasure[count*2+1];
         System.arraycopy(list,0,tmp,0,count);
         list = tmp;
     }
@@ -36,7 +59,7 @@ public class TreasureCollection {
 
     public Treasure get(int indx){
         checkIndex(indx);
-        return list[indx]
+        return list[indx];
     }
 
 
