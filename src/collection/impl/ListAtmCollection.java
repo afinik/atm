@@ -5,6 +5,9 @@ import java.util.NoSuchElementException;
 /**
  * Добавить метод addLast, добавить поле IntegerNode tail и
  * реализовать метод добавление в хвост
+ * Сравнить время
+ * работы основных алгоритмов (добавление, удаление, получения)
+ * связанного списка и коллекции на основе массива.
  */
 
 public class ListAtmCollection<E> {
@@ -17,11 +20,11 @@ public class ListAtmCollection<E> {
 
     public void push(E item){
         if (head == null){
-            head = (Node<E>) new Object();
+            head = new Node<>();
             head.value = item;
         } else {
             Node<E> tmp = head;
-            head = (Node<E>) new Object();
+            head = new Node<>();
             head.value = item;
             head.next = tmp;
         }
@@ -29,14 +32,14 @@ public class ListAtmCollection<E> {
 
     public void append(E item){
         if (head == null){
-            head = (Node<E>) new Object();
+            head = new Node<>();
             head.value = item;
         }else{
             Node<E> current = head;
             while (current.next != null){
                 current = current.next;
             }
-            current.next = (Node<E>) new Object();
+            current.next = new Node<>();
             current.next.value = item;
 
         }

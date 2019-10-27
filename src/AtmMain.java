@@ -9,12 +9,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Deque;
 
 
 public class AtmMain{
 
     public static void main(String[] args){
+
+        Instant start = Instant.now();
 
         ListAtmCollection atmCollection = new ListAtmCollection();
         atmCollection.append(1);
@@ -24,7 +28,9 @@ public class AtmMain{
 
 
         boolean item = atmCollection.remove(3);
-        System.out.println(item);
+
+        Instant stop = Instant.now();
+        System.out.println(Duration.between(start, stop));
 
 
 
