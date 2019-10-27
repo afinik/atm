@@ -13,6 +13,10 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Deque;
 
+/**
+ * https://vk.com/doc10903696_336361025?hash=175de31599461c95a4&dl=4850ee878a3611ed69
+ * https://vk.com/wall-54530371_505
+ */
 
 public class AtmMain{
 
