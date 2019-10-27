@@ -3,12 +3,10 @@ package store;
 import app.domain.Account;
 import app.domain.Nominal;
 import app.domain.Treasure;
-import collection.AccountCollection;
 import collection.AtmCollection;
 import collection.impl.ArrayAtmCollection;
 
 import java.util.Date;
-import java.util.List;
 
 
 public class Storage {
