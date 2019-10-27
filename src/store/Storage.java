@@ -3,12 +3,13 @@ package store;
 import app.domain.Account;
 import app.domain.Nominal;
 import app.domain.Treasure;
+import collection.AccountCollection;
 
 
 public class Storage {
 
     private static Treasure[] treasures;
-    private static Account[] accounts;
+    private static AccountCollection accounts;
 
     static {
         treasures = new Treasure[Nominal.values().length];
@@ -19,6 +20,14 @@ public class Storage {
             treasures[i].setAmount(100);
         }
 
+        loadAccounts();
+
+
+    }
+
+    private static void loadAccounts() {
+
+        //accounts
 
     }
 
