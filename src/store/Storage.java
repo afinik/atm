@@ -4,25 +4,20 @@ import app.domain.Account;
 import app.domain.Nominal;
 import app.domain.Treasure;
 import collection.AccountCollection;
+import collection.AtmCollection;
 
 
 public class Storage {
 
-    private static Treasure[] treasures;
-    private static AccountCollection accounts;
+    private static AtmCollection<Treasure> treasures;
+    private static AtmCollection<Account> accounts;
 
     static {
-        treasures = new Treasure[Nominal.values().length];
-
-        for (int i = 0; i < treasures.length; i++) {
-            treasures[i] = new Treasure();
-            treasures[i].setNominal(Nominal.values()[i]);
-            treasures[i].setAmount(100);
-        }
-
+        loadTreasures();
         loadAccounts();
+    }
 
-
+    private static void loadTreasures() {
     }
 
     private static void loadAccounts() {
