@@ -1,21 +1,18 @@
 import app.domain.Account;
-import collection.AccountCollection;
-import collection.TreasureCollection;
-import store.Storage;
+import app.domain.Treasure;
+import collection.AtmCollection;
+import collection.impl.ArrayAtmCollection;
 
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
 public class AtmMain {
 
     public static void main(String[] args) throws ClassNotFoundException {
 
+        AtmCollection<Account> list = new ArrayAtmCollection<>();
 
-        List<Integer> arr = new LinkedList<>();
-
-
-        //List<Object> arr = new LinkedList();
+        list.add(new Account("Artem Trunov", new Date(), "1242"));
+        list.add(new Account("Ivan Petrov", new Date(), "4542"));
 
 
 
