@@ -19,7 +19,7 @@ public class AccountCollection {
     }
 
     public int size(){
-        return this.list.length;
+        return this.count;
     }
 
     public void add(Account account){
@@ -42,7 +42,7 @@ public class AccountCollection {
     }
 
     private void checkIndex(int index) {
-        if(index > list.length-1 || index < 0){
+        if(index > this.count || index < 0){
             throw new RuntimeException("index out of range");
         }
     }
@@ -53,6 +53,7 @@ public class AccountCollection {
             for (Account acc: list) {
                 if (account.equals(acc)){
                     System.arraycopy(list,indx,list,indx-1,list.length-indx);
+                    count--;
                 }
                 indx++;
             }
